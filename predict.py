@@ -47,8 +47,8 @@ class Predictor(BasePredictor):
         predictions = []
         page_num = 0
         for idx, (sample, is_last_page) in enumerate(tqdm(dataloader)):
-            output = self.model.inference(image_tensors=sample)
-            for j, output in enumerate(output["predictions"]):
+            model_output = self.model.inference(image_tensors=sample)
+            for j, output in enumerate(model_output["predictions"]):
                 if page_num == 0:
                     print(
                         "Processing file %s with %i pages"
@@ -59,8 +59,8 @@ class Predictor(BasePredictor):
                     # uncaught repetitions -- most likely empty page
                     predictions.append(f"\n\n[MISSING_PAGE_EMPTY:{page_num}]\n\n")
                     continue
-                if output["repeats"][j] is not None:
-                    if output["repeats"][j] > 0:
+                if model_output["repeats"][j] is not None:
+                    if model_output["repeats"][j] > 0:
                         # If we end up here, it means the output is most likely not complete and was truncated.
                         print(f"Skipping page {page_num} due to repetitions.")
                         predictions.append(f"\n\n[MISSING_PAGE_FAIL:{page_num}]\n\n")

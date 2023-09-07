@@ -1,6 +1,6 @@
 import replicate
 
-MODEL_NAME = "awilliamson10/meta-nougat:42a683e961e164dc4647590a38a8571a11ee446d78b2f928c0abd3a21235d34a"
+MODEL_NAME = "awilliamson10/meta-nougat:a9786e4af4a416a20bc10165dae536492b7e72ea2698c7dd4923c89c2737209f"
 
 def main():
     prediction = replicate.run(
