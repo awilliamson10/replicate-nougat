@@ -1,0 +1,33 @@
+{
+  "_name_or_path": "/fsx-llm/lblecher/checkpoints/nougat/perturb/20230426_125023",
+  "align_long_axis": false,
+  "architectures": [
+    "NougatModel"
+  ],
+  "decoder_layer": 10,
+  "embed_dim": 128,
+  "encoder_layer": [
+    2,
+    2,
+    14,
+    2
+  ],
+  "hidden_dimension": 1024,
+  "input_size": [
+    896,
+    672
+  ],
+  "max_length": 4096,
+  "max_position_embeddings": 4096,
+  "model_type": "nougat",
+  "num_heads": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "patch_size": 4,
+  "torch_dtype": "float32",
+  "transformers_version": "4.25.1",
+  "window_size": 7
+}

@@ -1,0 +1,2 @@
+nougat-ocr[dataset]
+nougat-ocr[api]
