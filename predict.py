@@ -33,7 +33,7 @@ class Predictor(BasePredictor):
     def predict(
         self,
         pdf_link: str = Input(description="Link to the PDF to be annotated"),
-    ) -> dict:
+    ) -> str:
         pdf_path = self.get_pdf(pdf_link)
         try:
             dataset = LazyDataset(
@@ -76,7 +76,7 @@ class Predictor(BasePredictor):
                 formatted_output = "".join(predictions).strip()
                 formatted_output = re.sub(r"\n{3,}", "\n\n", formatted_output).strip()
 
-        return {"predictions": formatted_output}
+        return formatted_output
 
 
         
